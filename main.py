@@ -11,7 +11,12 @@ shark_csv_path = "../data/sharks/sharks_cleaned.csv"
 app = Flask(__name__)
 
 # Flask Routes
+
 @app.route("/")
+def indextest():
+  return "pizza"
+
+@app.route("/tracker")
 def index():
   return render_template("SharkTracker.html")
   
