@@ -1,0 +1,40 @@
+/* remove default margin and padding from body */
+body{
+  padding: 0px;
+  margin: 0px;
+  background-image: linear-gradient(
+    to right, lightskyblue, dodgerblue, darkblue);
+}
+
+/* set map, body, and html to 100% of the screen size */
+#map,
+body,
+html {
+  height: 90%;
+}
+
+.legend {
+  line-height: 20px;
+  color: black;
+  padding: 5px;
+  border-radius: 6px;
+  border-top: 1px;
+  background: rgba(59, 59, 59, 0.3);
+  
+}
+.legend img {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 8px;
+}
+
+.legend span {
+  font-size: 13px;
+}
+
+#ships-only,
+#sharks-only {
+  background-color: darkblue;
+  margin: 6px;
+}

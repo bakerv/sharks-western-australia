@@ -1,0 +1,78 @@
+ <!DOCTYPE html>
+   <html lang ="en">
+
+   <head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Shark Tracker</title>
+       <link rel="stylesheet" type="text/css" href="/static/styles/mdb.min.css">
+       <link rel= "stylesheet" type="text/css" href="/static/styles/style.css">
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.0/d3.min.js"
+        integrity="sha512-0x7/VCkKLLt4wnkFqI8Cgv6no+AaS1TDgmHLOoU3hy/WVtYta2J6gnOIHhYYDJlDxPqEqAYLPS4gzVex4mGJLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   </head>
+   <body>
+         <!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-sm-0" href="#">
+        <img
+          src="https://img.icons8.com/color/48/000000/aggressive-shark.png"/>
+      </a>
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-0 mb-sm-0">
+        <li class="nav-item">
+          <a class="nav-link" href="">Shark Tracker</a>
+          
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Charts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sources</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+    <a class="btn btn-primary" id="ships-only" role="button" style ="padding:20px">Ships Only</a>
+    <a class="btn btn-primary" id="sharks-only" role="button" style ="padding:20px;">Sharks Only</a>
+</nav>
+<!-- Navbar -->
+    <!-- End your project here-->
+    <!-- MDB -->
+    
+   <center><h1>Shark Tracker</h1>
+   <p>Be able to track sharks as they roam the ocean around Australia. Do they reside at known shipwreck locations?</p></center>
+   <div id='map'></div>
+   <script type="text/javascript" src="js/mdb.min.js"></script>
+   <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
+   <script src="https://d3js.org/d3.v7.min.js"></script>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+   <script src="{{ url_for('static',filename='scripts/config.js') }}"></script>
+   <script type="text/javascript" src="{{ url_for('static',filename='scripts/shipwreckdata.js') }}"></script>
+   </body>
+   </html> 
