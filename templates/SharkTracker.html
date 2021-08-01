@@ -6,6 +6,7 @@
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Shark Tracker</title>
+       <link href="http://fonts.cdnfonts.com/css/amity-jack" rel="stylesheet">
        <link rel="stylesheet" type="text/css" href="/static/styles/mdb.min.css">
        <link rel= "stylesheet" type="text/css" href="/static/styles/style.css">
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -33,21 +34,21 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-sm-0" href="#">
+      <a class="navbar-brand mt-2 mt-sm-0">
         <img
           src="https://img.icons8.com/color/48/000000/aggressive-shark.png"/>
       </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-0 mb-sm-0">
         <li class="nav-item">
-          <a class="nav-link" href="">Shark Tracker</a>
+          <a class="nav-link" href="/">Shark Tracker</a>
           
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Charts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sources</a>
+          <a class="nav-link" href="/sources">Sources</a>
         </li>
       </ul>
       <!-- Left links -->
@@ -56,16 +57,19 @@
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
-    <a class="btn btn-primary" id="ships-only" role="button" style ="padding:20px">Ships Only</a>
-    <a class="btn btn-primary" id="sharks-only" role="button" style ="padding:20px;">Sharks Only</a>
+    <a class="btn btn-primary" id="ships-only" role="button" style ="padding-right:20px;">Ships Only</a>
+    <a class="btn btn-primary" id="sharks-only" role="button" style ="padding-left:20px;">Sharks Only</a>
 </nav>
-<!-- Navbar -->
-    <!-- End your project here-->
-    <!-- MDB -->
-    
-   <center><h1>Shark Tracker</h1>
-   <p>Be able to track sharks as they roam the ocean around Australia. Do they reside at known shipwreck locations?</p></center>
-   <div id='map'></div>
+<div class = container-fluid>
+  <div class = "col">
+    <div class = "row" style="background-color: rgba(255,255,255,0.4); margin-top:10px; margin-bottom:10px">    
+      <center><h1>Shark Tracker</h1>
+      <p>Be able to track sharks as they roam the ocean around Australia. Do they reside at known shipwreck locations?</p></center>
+    </div>
+  </div>
+</div>
+      <div id='map'></div>
+     
    <script type="text/javascript" src="js/mdb.min.js"></script>
    <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
    <script src="https://d3js.org/d3.v7.min.js"></script>
