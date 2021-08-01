@@ -23,3 +23,6 @@ def update_data():
     sharks_df.to_csv("data/sharks/sharks_cleaned.csv")
 
     return redirect("/")
+
+if __name__ == "__main__":
+  app.run(debug=True)
