@@ -8,6 +8,7 @@ flask = "*"
 gunicorn = "*"
 requests = "*"
 sqlalchemy = "*"
+pandas = "*"
 
 [dev-packages]
 

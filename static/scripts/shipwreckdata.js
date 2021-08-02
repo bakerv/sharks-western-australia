@@ -92,7 +92,7 @@ let shipData = d3.json(shipDataRaw).then((rawData)=> {
     ships.addTo(layers['ships'])
 });
 
-   // Set up and object containiner a color reference for each shark species
+// Set up icon references for each shark species
 var customIcon = L.Icon.extend({
 options: {
     iconSize: [25,25],
@@ -175,7 +175,7 @@ function addLegend(map) {
     }
     legend.addTo(map);
 }
-
+// functions to generate the initial map view, and then control each button click
 function shipsOnly() {
     layers.blacktip.removeFrom(map)
     layers.blue.removeFrom(map)
@@ -221,10 +221,41 @@ function initialView() {
     layers.ships.addTo(map)
 }
 
+function shipsSharks() {
+    layers.blacktip.addTo(map)
+    layers.blue.addTo(map)
+    layers.bull.addTo(map)
+    layers.bronzeWhaler.addTo(map)
+    layers.dusky.addTo(map)
+    layers.greyNurse.addTo(map)
+    layers.hammerhead.addTo(map)
+    layers.mako.addTo(map)
+    layers.tiger.addTo(map)
+    layers.white.addTo(map)
+    layers.unknown.removeFrom(map)
+    layers.ships.addTo(map)
+}
+// Functions to control the Jaws theme song on the Shark Tracker page
+var jawsSong = new Audio("/static/audio/Jaws-theme-song.mp3");
+
+function playJaws() {
+    jawsSong.play();
+}
+
+function stopJaws() {
+    jawsSong.pause();
+    jawsSong.currentTime=0;
+}
+
+d3.selectAll("#both").on('click', playJaws);
+
 addLegend(map);
 
 d3.selectAll("#ships-only").on('click', shipsOnly);
 d3.selectAll("#sharks-only").on('click', knownSharksOnly);
+d3.selectAll("#both").on('click', shipsSharks);
+d3.selectAll("#click-me").on('click', playJaws);
+d3.selectAll("#nevermind").on('click', stopJaws); 
 
 
 

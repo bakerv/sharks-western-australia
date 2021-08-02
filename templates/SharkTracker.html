@@ -6,19 +6,60 @@
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Shark Tracker</title>
-       <link href="http://fonts.cdnfonts.com/css/amity-jack" rel="stylesheet">
        <link rel="stylesheet" type="text/css" href="/static/styles/mdb.min.css">
        <link rel= "stylesheet" type="text/css" href="/static/styles/style.css">
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+       <link rel="stylesheet" href="/static/styles/animate.css">
+       <link rel="shortcut icon" href="/static/images/aggressive-shark-16.png">
        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.0/d3.min.js"
         integrity="sha512-0x7/VCkKLLt4wnkFqI8Cgv6no+AaS1TDgmHLOoU3hy/WVtYta2J6gnOIHhYYDJlDxPqEqAYLPS4gzVex4mGJLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       <script src="/static/scripts/jquery-3.6.0.js"></script>
+       <script src='/static/scripts/jquery.fittext.js'></script>
+       <script src="/static/scripts/jquery.lettering.js"></script>
+       <script src="/static/scripts/jquery.textillate.js"></script>
+      <!-- Text animation for click me and nevermind buttons -->
+       <script>
+        $(function () {
+            // activate text animation on button click
+            $('#click-me').click(function () {
+                $('.tlt').textillate({
+                  in: {effect:'bounceIn', delay:85},
+                  out: {effect:'bounceOut', delay:85, reverse: true},
+                  loop: true
+                })
+                $('.tlt').textillate('in');
+
+                $('.tlt1').textillate({
+                  in:{effect:'bounceIn', delay:10},
+                  out:{effect:'bounceOut',delay:10, reverse: true},
+                  loop: true
+                });
+                $('.tlt1').textillate('in');
+            });
+        });
+
+        $(function () {
+            // stop text animation on button click by ending the loop
+            $('#nevermind').click(function () {
+                $('.tlt').textillate({
+                  in: {effect:'bounceIn', delay:85},
+                  out: {effect:'bounceOut', delay:85, reverse: true},
+                });
+                $('.tlt').textillate('in');
+
+                $('.tlt1').textillate({
+                  in:{effect:'bounceIn', delay:10},
+                  out:{effect:'bounceOut',delay:10, reverse: true},
+                });
+                $('.tlt1').textillate('in');
+            });
+        });
+       </script>
    </head>
    <body>
-         <!-- Navbar -->
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-  <!-- Container wrapper -->
   <div class="container-fluid">
-    <!-- Toggle button -->
     <button
       class="navbar-toggler"
       type="button"
@@ -30,48 +71,45 @@
     >
       <i class="fas fa-bars"></i>
     </button>
-
-    <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-sm-0">
         <img
           src="https://img.icons8.com/color/48/000000/aggressive-shark.png"/>
       </a>
-      <!-- Left links -->
       <ul class="navbar-nav me-auto mb-0 mb-sm-0">
         <li class="nav-item">
           <a class="nav-link" href="/">Shark Tracker</a>
-          
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Charts</a>
+          <a class="nav-link" href="/charts">Charts</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sources">Sources</a>
         </li>
       </ul>
-      <!-- Left links -->
     </div>
-    <!-- Collapsible wrapper -->
-
-    <!-- Right elements -->
     <div class="d-flex align-items-center">
-    <a class="btn btn-primary" id="ships-only" role="button" style ="padding-right:20px;">Ships Only</a>
-    <a class="btn btn-primary" id="sharks-only" role="button" style ="padding-left:20px;">Sharks Only</a>
+      <a class="btn btn-primary" id="click-me" role="button" style ="padding-right:20px ">Click Me</a>
+      <a class="btn btn-primary" id="nevermind" role="button" style ="padding-left:20px;">Nevermind</a>
 </nav>
-<div class = container-fluid>
-  <div class = "col">
-    <div class = "row" style="background-color: rgba(255,255,255,0.4); margin-top:10px; margin-bottom:10px">    
-      <center><h1>Shark Tracker</h1>
-      <p>Be able to track sharks as they roam the ocean around Australia. Do they reside at known shipwreck locations?</p></center>
+<div class=container-fluid>
+  <div class="col">
+    <div class="row" style="background-color: rgba(255,255,255,0.4); margin-top:10px; margin-bottom:10px">    
+      <center><h1 class ="tlt">Shark Tracker</h1>
+      <p class="tlt1" style="font-size: 20px;">Be able to track sharks as they roam the ocean around Australia. Do they reside at known shipwreck locations?</p></center>
+    <center>
+    <a class="btn btn-primary" id="ships-only" role="button" style ="padding-right:20px; width: 8%;">Ships</a>
+    <a class="btn btn-primary" id="sharks-only" role="button" style ="padding-left:20px; width: 8%;">Sharks</a>
+    <a class="btn btn-primary" id="both" role="button" style ="padding-left:20px; width: 8%;">Both</a>
+    </center>
     </div>
   </div>
 </div>
       <div id='map'></div>
-     
-   <script type="text/javascript" src="js/mdb.min.js"></script>
-   <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
+      <br>
+      <p>Created by Victor Baker, James Gonzales, Courtney Hyland, and Maria Ramirez</p>
+   
+   <script type="text/javascript" src="/static/scripts/mdb.min.js"></script>
    <script src="https://d3js.org/d3.v7.min.js"></script>
    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
@@ -79,4 +117,5 @@
    <script src="{{ url_for('static',filename='scripts/config.js') }}"></script>
    <script type="text/javascript" src="{{ url_for('static',filename='scripts/shipwreckdata.js') }}"></script>
    </body>
+
    </html> 

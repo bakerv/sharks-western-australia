@@ -10,7 +10,7 @@ body{
 #map,
 body,
 html {
-  height: 90%;
+  height: 88%;
 }
 
 .legend {
@@ -20,8 +20,8 @@ html {
   border-radius: 6px;
   border-top: 1px;
   background: rgba(255, 255, 255, 0.3);
-  
 }
+
 .legend img {
   width: 20px;
   height: 20px;
@@ -34,11 +34,28 @@ html {
 }
 
 #ships-only,
-#sharks-only {
-  background-color: darkblue;
+#sharks-only,
+#both,
+#click-me,
+#nevermind {
+  color:rgb(207, 36, 36);
+  background-color: white;
   margin: 6px;
+  font-size: 16px
 }
 
-h1, h3, .navbar {
+h1, h3, .navbar, .btn {
   font-family: 'Amity Jack', sans-serif;
+  color: rgb(207, 36, 36);
+}
+
+@font-face {
+  font-family: Amity Jack;
+  src: url(/static/styles/Amity\ Jack.ttf);
+}
+
+.chart {
+  width:90%;
+  max-width:1000px;
+  height:auto;
 }

@@ -18,6 +18,10 @@ def index():
 @app.route("/sources")  
 def sources():
   return render_template("sources.html")
+
+@app.route("/charts")
+def charts():
+  return render_template("charts.html")
   
 @app.route("/update")
 def update_data():
