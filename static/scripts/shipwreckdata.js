@@ -69,7 +69,7 @@ var overlays = {
 // Use the overlay object to create a control panel for each layer, and add it to the map
 // This allows toggling of which layer we want to display
 L.control.layers(null,overlays,{
-    collapsed: false
+    collapsed: true
 }).addTo(map);
 
 let shipMarker = L.icon({

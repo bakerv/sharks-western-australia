@@ -11,6 +11,7 @@
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
        <link rel="stylesheet" href="/static/styles/animate.css">
        <link rel="shortcut icon" href="/static/images/aggressive-shark-16.png">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.0/d3.min.js"
         integrity="sha512-0x7/VCkKLLt4wnkFqI8Cgv6no+AaS1TDgmHLOoU3hy/WVtYta2J6gnOIHhYYDJlDxPqEqAYLPS4gzVex4mGJLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
        <script src="/static/scripts/jquery-3.6.0.js"></script>
@@ -58,7 +59,7 @@
    </head>
    <body>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <button
       class="navbar-toggler"
@@ -68,6 +69,7 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      style="background-color:white"
     >
       <i class="fas fa-bars"></i>
     </button>
@@ -89,8 +91,8 @@
       </ul>
     </div>
     <div class="d-flex align-items-center">
-      <a class="btn btn-primary" id="click-me" role="button" style ="padding-right:20px ">Click Me</a>
-      <a class="btn btn-primary" id="nevermind" role="button" style ="padding-left:20px;">Nevermind</a>
+      <a class="btn btn-primary" id="click-me" role="button" style ="padding-right:20px ">Activate</a>
+      <a class="btn btn-primary" id="nevermind" role="button" style ="padding-left:20px;">Silence</a>
 </nav>
 <div class=container-fluid>
   <div class="col">
@@ -98,9 +100,9 @@
       <center><h1 class ="tlt">Shark Tracker</h1>
       <p class="tlt1" style="font-size: 20px;">Be able to track sharks as they roam the ocean around Australia. Do they reside at known shipwreck locations?</p></center>
     <center>
-    <a class="btn btn-primary" id="ships-only" role="button" style ="padding-right:20px; width: 8%;">Ships</a>
-    <a class="btn btn-primary" id="sharks-only" role="button" style ="padding-left:20px; width: 8%;">Sharks</a>
-    <a class="btn btn-primary" id="both" role="button" style ="padding-left:20px; width: 8%;">Both</a>
+    <a class="btn btn-primary" id="ships-only" role="button" style ="padding-right:20px; width: 120px;">Ships</a>
+    <a class="btn btn-primary" id="sharks-only" role="button" style ="padding-left:20px; width: 120px;">Sharks</a>
+    <a class="btn btn-primary" id="both" role="button" style ="padding-left:20px; width: 120px;">Both</a>
     </center>
     </div>
   </div>
@@ -116,6 +118,7 @@
    crossorigin=""></script>
    <script src="{{ url_for('static',filename='scripts/config.js') }}"></script>
    <script type="text/javascript" src="{{ url_for('static',filename='scripts/shipwreckdata.js') }}"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> 
    </body>
 
    </html> 
